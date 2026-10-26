@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Header";
+import { PaymentMethods } from "./PaymentMethods";
 import { site, whatsappLink } from "@/lib/site";
 
 export function Footer() {
@@ -10,9 +11,7 @@ export function Footer() {
           <div>
             <Logo />
             <p>{site.tagline}</p>
-            <div className="pay">
-              <span>Pix</span><span>Visa</span><span>Mastercard</span><span>Elo</span>
-            </div>
+            <PaymentMethods />
           </div>
           <div>
             <h4>Loja</h4>

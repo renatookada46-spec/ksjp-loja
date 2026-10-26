@@ -233,8 +233,10 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .foot a:hover { color: var(--washi); }
 .foot p { max-width: 22rem; }
-.pay { display: flex; gap: 8px; flex-wrap: wrap; }
-.pay span { border: 1px solid rgba(255,255,255,.18); padding: 5px 10px; font-size: .75rem; line-height: 1; }
+.foot .pay, .pay { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap; align-self: flex-start; }
+.pay li { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 8px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); font-size: .8rem; color: var(--washi); }
+.pay svg { height: 20px; width: 20px; padding: 2px; border-radius: 6px; background: #fff; flex: none; box-sizing: content-box; }
+.pay svg.wide { width: 30px; padding: 2px 4px; }
 .legal { border-top: 1px solid rgba(255,255,255,.08); margin-top: 48px; padding-top: 20px; font-size: .78rem; color: var(--ash); }
 
 .wa { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 18; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.6); background: linear-gradient(180deg, rgba(250,205,219,.92), rgba(220,120,155,.88)); backdrop-filter: blur(14px) saturate(170%); -webkit-backdrop-filter: blur(14px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 24px rgba(0,0,0,.35); }
