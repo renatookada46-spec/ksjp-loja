@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PriceBreakdown } from "@/components/PriceBreakdown";
 import { PurchaseNotice } from "@/components/PurchaseNotice";
 import { brl } from "@/lib/format";
 import { rules, site, whatsappLink } from "@/lib/site";
@@ -18,7 +19,7 @@ const steps = [
   },
   {
     title: `Entrada de ${rules.depositPercent}%`,
-    text: `O valor do pedido é a soma dos produtos, do frete do Japão para o Brasil e da taxa de serviço de ${brl(rules.serviceFee)}. Na hora do pedido você paga ${rules.depositPercent}% desse valor, no Pix ou no cartão.`,
+    text: `O valor do pedido é a soma dos produtos (pelo preço do site, sem acréscimo), do frete da caixa (calculado por quilo) e do serviço KSJP de ${brl(rules.serviceFee)} por caixa. Na hora do pedido você paga ${rules.depositPercent}% desse total, no Pix ou no cartão.`,
   },
   {
     title: "Compramos seus produtos",
@@ -48,6 +49,8 @@ export default function RulesPage() {
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1 }}>Regras de compra</h1>
           </div>
         </div>
+
+        <PriceBreakdown />
 
         <div className="rules-grid">
           <ol className="rules-list">

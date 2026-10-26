@@ -225,6 +225,28 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .rules-box h2 { font-size: 1.05rem; }
 .rules-box p { color: var(--ink-soft); font-size: .92rem; }
 
+/* Cálculo do valor do pedido */
+.calc { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; margin-bottom: 72px; padding-bottom: 72px; border-bottom: 1px solid rgba(28,26,24,.15); }
+.calc-copy { display: flex; flex-direction: column; gap: 18px; }
+.calc h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.2; }
+.calc-parts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; counter-reset: c; }
+.calc-parts li { counter-increment: c; display: grid; grid-template-columns: 32px 1fr; column-gap: 12px; row-gap: 2px; padding: 14px 16px; background: rgba(255,255,255,.45); border: 1px solid rgba(201,106,138,.25); border-radius: 14px; }
+.calc-parts li::before { content: counter(c); grid-row: span 2; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 700; color: #3a1022; background: linear-gradient(180deg, rgba(250,205,219,.95), rgba(236,148,177,.8)); }
+.calc-parts b { font-size: .98rem; }
+.calc-parts span { color: var(--ink-soft); font-size: .9rem; }
+.calc-split { color: var(--ink-soft); }
+.calc-split strong { color: var(--ink); }
+.calc-example { background: var(--sumi); color: var(--washi); border-radius: 18px; padding: 26px; display: flex; flex-direction: column; gap: 16px; }
+.calc-example .eyebrow { color: var(--sakura); }
+.calc-example dl { margin: 0; display: grid; }
+.calc-example dl div { display: flex; justify-content: space-between; gap: 16px; padding-block: 10px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .92rem; }
+.calc-example dt { color: rgba(239,233,223,.78); }
+.calc-example dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.calc-example .sum { font-weight: 700; border-bottom-color: rgba(242,169,191,.4); }
+.calc-example .sum dt { color: var(--washi); }
+.calc-example .pay-now dd, .calc-example .pay-now dt { color: var(--sakura); font-weight: 700; }
+.calc-example p { font-size: .78rem; color: var(--ash); }
+
 /* Rodapé */
 .site-footer { padding-block: 64px 40px; color: rgba(239,233,223,.68); font-size: .88rem; }
 .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
@@ -256,6 +278,7 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
   .steps { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
   .pdp { grid-template-columns: 1fr 1fr; gap: 40px; }
   .rules-grid { grid-template-columns: 1fr; gap: 40px; }
+  .calc { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; padding-bottom: 56px; }
   .rules-side { position: static; }
   .foot { grid-template-columns: 1.4fr 1fr 1fr; }
   .foot > div:first-child { grid-column: 1 / -1; }

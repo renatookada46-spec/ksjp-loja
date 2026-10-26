@@ -57,6 +57,7 @@ export default async function ProductPage({ params }: Props) {
             </a>
             <PurchaseNotice />
             <ul className="pdp-perks">
+              <li>Você paga pelo produto exatamente este preço, sem acréscimo</li>
               <li>Comprado em loja oficial no Japão</li>
               <li>Envio rastreado, chega em 15 a 30 dias</li>
               <li>Pix ou cartão de crédito</li>

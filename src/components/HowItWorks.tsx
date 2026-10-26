@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { brl } from "@/lib/format";
 import { rules } from "@/lib/site";
 
 const steps = [
   {
     title: "Você faz o pedido",
-    text: `Paga ${rules.depositPercent}% de entrada em reais, no Pix ou no cartão.`,
+    text: `Paga ${rules.depositPercent}% de entrada: produtos, frete da caixa e serviço de ${brl(rules.serviceFee)}.`,
   },
   {
     title: "Compramos no Japão",

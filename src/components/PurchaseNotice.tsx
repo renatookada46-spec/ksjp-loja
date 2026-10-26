@@ -14,9 +14,11 @@ export function PurchaseNotice() {
         <b>Atenção: leia antes de comprar</b>
       </div>
       <p>
-        Trabalhamos por encomenda. Você paga <strong>{rules.depositPercent}% de entrada</strong>{" "}
-        (produtos, frete do Japão e taxa de serviço de {brl(rules.serviceFee)}) e nós compramos seus
-        produtos em loja oficial.
+        Trabalhamos por encomenda. O valor do pedido é a soma de três partes:{" "}
+        <strong>os produtos pelo preço do site</strong>, <strong>o frete da caixa</strong> (calculado
+        por quilo) e <strong>{brl(rules.serviceFee)} de serviço por caixa</strong>. Você paga{" "}
+        <strong>{rules.depositPercent}% no pedido</strong> e os{" "}
+        <strong>{100 - rules.depositPercent}% restantes quando pedir o envio</strong>.
       </p>
       <p>
         Quando avisarmos que seu pedido está completo, você tem <strong>{rules.holdDays} dias</strong>{" "}
