@@ -1,4 +1,4 @@
-# Kirei: loja de beleza japonesa
+# KSJP: loja de beleza japonesa
 
 Loja virtual em português do Brasil que vende skincare e beleza japonesa, com envio do Japão para o Brasil. Preços só em reais, pagamento no Pix ou cartão.
 
@@ -47,6 +47,8 @@ src/
 - **Nome da loja, WhatsApp e Instagram:** `src/lib/site.ts` e `.env.local`.
 - **Produtos e preços:** `src/lib/products.ts`, até a Etapa 2.
 - **Cores:** as variáveis no topo de `src/app/globals.css`.
+- **Imagem da abertura:** troque `public/hero.webp` por outra imagem com o mesmo nome.
+- **Logo:** o texto vem de `src/lib/site.ts` e a pétala de `src/components/SakuraPetal.tsx`.
 
 ## Etapas
 

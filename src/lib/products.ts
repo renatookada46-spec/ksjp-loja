@@ -176,7 +176,7 @@ export const products: Product[] = [
   },
   {
     slug: "kit-rotina-hidratacao",
-    brand: "Kirei",
+    brand: "KSJP",
     name: "Kit Rotina Hidratação",
     category: "kits",
     price: 249,

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { SakuraPetal } from "./SakuraPetal";
 
 const links = [
   { href: "/produtos?categoria=skincare", label: "Skincare" },
@@ -32,9 +33,9 @@ export function Header() {
 
 export function Logo() {
   return (
-    <Link className="logo" href="/">
-      <span className="dot" aria-hidden="true" />
-      {site.name}
+    <Link className="logo" href="/" aria-label={`${site.name}, página inicial`}>
+      <span>{site.name}</span>
+      <SakuraPetal className="petal" />
     </Link>
   );
 }

@@ -1,11 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
-import { NightCanvas } from "./NightCanvas";
+import { PetalCanvas } from "./PetalCanvas";
+import heroImage from "../../public/hero.webp";
 
 export function Hero() {
   return (
     <section className="hero" aria-label="Abertura">
-      <NightCanvas />
-      <div className="sun" aria-hidden="true" />
+      <Image
+        className="hero-bg"
+        src={heroImage}
+        alt=""
+        fill
+        priority
+        placeholder="blur"
+        sizes="100vw"
+      />
+      <div className="hero-shade" aria-hidden="true" />
+      <PetalCanvas />
       <div className="wrap hero-in">
         <div className="hero-copy">
           <div className="eyebrow">Do Japão para a sua casa</div>
