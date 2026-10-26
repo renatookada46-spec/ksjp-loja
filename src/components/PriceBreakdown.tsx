@@ -18,7 +18,7 @@ export function PriceBreakdown() {
         <ol className="calc-parts">
           <li>
             <b>Produtos</b>
-            <span>Você paga exatamente o preço que aparece no site. Nem mais, nem menos.</span>
+            <span>Você paga o mesmo preço das lojas japonesas, convertido para reais. Nem mais, nem menos.</span>
           </li>
           <li>
             <b>Frete da caixa</b>

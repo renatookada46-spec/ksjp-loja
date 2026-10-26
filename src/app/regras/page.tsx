@@ -19,7 +19,7 @@ const steps = [
   },
   {
     title: `Entrada de ${rules.depositPercent}%`,
-    text: `O valor do pedido é a soma dos produtos (pelo preço do site, sem acréscimo), do frete da caixa (calculado por quilo) e do serviço KSJP de ${brl(rules.serviceFee)} por caixa. Na hora do pedido você paga ${rules.depositPercent}% desse total, no Pix ou no cartão.`,
+    text: `O valor do pedido é a soma dos produtos (pelo preço das lojas japonesas, sem acréscimo), do frete da caixa (calculado por quilo) e do serviço KSJP de ${brl(rules.serviceFee)} por caixa. Na hora do pedido você paga ${rules.depositPercent}% desse total, no Pix ou no cartão.`,
   },
   {
     title: "Compramos seus produtos",

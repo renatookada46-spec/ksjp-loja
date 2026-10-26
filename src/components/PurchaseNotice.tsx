@@ -15,7 +15,7 @@ export function PurchaseNotice() {
       </div>
       <p>
         Trabalhamos por encomenda. O valor do pedido é a soma de três partes:{" "}
-        <strong>os produtos pelo preço do site</strong>, <strong>o frete da caixa</strong> (calculado
+        <strong>os produtos pelo preço das lojas japonesas</strong>, <strong>o frete da caixa</strong> (calculado
         por quilo) e <strong>{brl(rules.serviceFee)} de serviço por caixa</strong>. Você paga{" "}
         <strong>{rules.depositPercent}% no pedido</strong> e os{" "}
         <strong>{100 - rules.depositPercent}% restantes quando pedir o envio</strong>.
