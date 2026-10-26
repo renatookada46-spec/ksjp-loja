@@ -8,8 +8,7 @@ export function Kits() {
           <div className="eyebrow">Compre sem susto</div>
           <h2>Kits pensados para o limite de US$ 50</h2>
           <p>
-            Montamos cada kit para ficar dentro da faixa de imposto mais baixa da importação. Você
-            já vê quanto paga de taxa antes de finalizar.
+            Montamos cada kit para ficar dentro da faixa de imposto mais baixa da importação.
           </p>
           <div className="limit">
             <div><b>US$ 50</b><span>valor máximo do kit</span></div>

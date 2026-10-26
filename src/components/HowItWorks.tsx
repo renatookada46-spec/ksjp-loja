@@ -1,8 +1,23 @@
+import Link from "next/link";
+import { rules } from "@/lib/site";
+
 const steps = [
-  { title: "Você escolhe", text: "Paga em reais, no Pix ou no cartão, aqui mesmo na loja." },
-  { title: "Compramos no Japão", text: "Em até 3 dias úteis, direto em loja oficial, com nota guardada." },
-  { title: "Enviamos para você", text: "Embalagem protegida e código de rastreio no seu WhatsApp." },
-  { title: "Chega na sua casa", text: "De 15 a 30 dias. O imposto da importação aparece antes de pagar." },
+  {
+    title: "Você faz o pedido",
+    text: `Paga ${rules.depositPercent}% de entrada em reais, no Pix ou no cartão.`,
+  },
+  {
+    title: "Compramos no Japão",
+    text: "Direto em loja oficial, com nota guardada. Sua caixa fica reservada.",
+  },
+  {
+    title: "Você pede o envio",
+    text: `Avisamos quando o pedido está completo. Você tem ${rules.holdDays} dias para pedir o envio e pagar o restante.`,
+  },
+  {
+    title: "Chega na sua casa",
+    text: "Enviamos com código de rastreio. A entrega leva de 15 a 30 dias.",
+  },
 ];
 
 export function HowItWorks() {
@@ -13,6 +28,7 @@ export function HowItWorks() {
           <div className="eyebrow">Transparência</div>
           <h2>Como funciona a sua compra</h2>
         </div>
+        <Link className="link" href="/regras">Ler as regras de compra</Link>
       </div>
       <ol className="steps">
         {steps.map((s) => (

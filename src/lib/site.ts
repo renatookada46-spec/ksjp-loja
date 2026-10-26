@@ -8,6 +8,13 @@ export const site = {
   installments: 3,
 };
 
+// Regras de compra por encomenda. Usadas no aviso de atenção e na página /regras.
+export const rules = {
+  depositPercent: 60,
+  serviceFee: 150,
+  holdDays: 15,
+};
+
 export function whatsappLink(message: string) {
   const text = encodeURIComponent(message);
   return site.whatsapp

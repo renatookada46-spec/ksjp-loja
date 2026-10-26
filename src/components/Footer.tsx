@@ -26,6 +26,7 @@ export function Footer() {
           <div>
             <h4>Ajuda</h4>
             <ul>
+              <li><Link href="/regras">Regras de compra</Link></li>
               <li><Link href="/#como-funciona">Prazos e frete</Link></li>
               <li><Link href="/#kits">Impostos</Link></li>
               <li><a href={whatsappLink("Olá! Tenho uma dúvida sobre trocas.")} target="_blank" rel="noopener noreferrer">Trocas</a></li>

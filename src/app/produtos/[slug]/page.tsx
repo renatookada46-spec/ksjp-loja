@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductGrid } from "@/components/ProductCard";
+import { PurchaseNotice } from "@/components/PurchaseNotice";
 import { ProductVisual } from "@/components/ProductVisual";
 import { brl } from "@/lib/format";
 import { getCategory, getProduct, products } from "@/lib/products";
@@ -54,6 +55,7 @@ export default async function ProductPage({ params }: Props) {
             <a className="btn btn-red" href={whatsappLink(message)} target="_blank" rel="noopener noreferrer">
               Comprar pelo WhatsApp
             </a>
+            <PurchaseNotice />
             <ul className="pdp-perks">
               <li>Comprado em loja oficial no Japão</li>
               <li>Envio rastreado, chega em 15 a 30 dias</li>
