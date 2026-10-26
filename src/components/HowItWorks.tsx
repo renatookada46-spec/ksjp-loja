@@ -16,7 +16,7 @@ const steps = [
   },
   {
     title: "Chega na sua casa",
-    text: "Enviamos com código de rastreio. A entrega leva de 15 a 30 dias.",
+    text: "Enviamos com código de rastreio, em 15 a 30 dias. A taxa de retirada no Brasil é por conta do cliente.",
   },
 ];
 

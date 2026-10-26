@@ -23,6 +23,11 @@ export function PurchaseNotice() {
         para pedir o envio da sua caixa. Sem pedido de envio nesse prazo, o pedido é cancelado e a
         entrada não é devolvida, porque os produtos já foram comprados para você.
       </p>
+      <p className="notice-key">
+        <strong>A taxa de retirada no Brasil é por conta do cliente.</strong> Impostos de importação e
+        a taxa dos Correios são pagos por quem recebe, na chegada da caixa, e não fazem parte do valor
+        do pedido.
+      </p>
       <Link className="link" href="/regras">Ler as regras de compra</Link>
     </aside>
   );

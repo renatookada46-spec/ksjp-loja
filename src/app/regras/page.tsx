@@ -34,7 +34,7 @@ const steps = [
   },
   {
     title: "Enviamos para o Brasil",
-    text: "Com o pagamento completo, enviamos a caixa com código de rastreio. O prazo de entrega costuma ser de 15 a 30 dias.",
+    text: "Com o pagamento completo, enviamos a caixa com código de rastreio. O prazo de entrega costuma ser de 15 a 30 dias. A taxa de retirada no Brasil é por conta do cliente.",
   },
 ];
 
@@ -61,6 +61,14 @@ export default function RulesPage() {
 
           <div className="rules-side">
             <div className="rules-alert">
+              <div className="eyebrow">Taxa de retirada no Brasil</div>
+              <p>
+                <strong>A taxa de retirada no Brasil é por conta do cliente.</strong> Quando a caixa
+                chega, os Correios podem cobrar imposto de importação e taxa de despacho. Esse valor é
+                pago por quem recebe e não faz parte do valor do pedido.
+              </p>
+            </div>
+            <div className="rules-alert">
               <div className="eyebrow">Cancelamento por falta de contato</div>
               <p>
                 Se você não pedir o envio em até <strong>{rules.holdDays} dias</strong> depois do
@@ -74,13 +82,6 @@ export default function RulesPage() {
               <p>
                 Mudou de ideia? Fale com a gente antes de comprarmos seus produtos e cancelamos o
                 pedido com devolução total da entrada.
-              </p>
-            </div>
-            <div className="rules-box">
-              <h2>Impostos de importação</h2>
-              <p>
-                Compras internacionais podem ter imposto cobrado pelos Correios quando a caixa chega
-                ao Brasil. Esse valor é pago por quem recebe e não faz parte do valor do pedido.
               </p>
             </div>
             <a className="btn btn-red" href={whatsappLink("Olá! Tenho uma dúvida sobre as regras de compra.")} target="_blank" rel="noopener noreferrer">

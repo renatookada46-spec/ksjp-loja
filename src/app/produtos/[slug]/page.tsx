@@ -60,6 +60,7 @@ export default async function ProductPage({ params }: Props) {
               <li>Comprado em loja oficial no Japão</li>
               <li>Envio rastreado, chega em 15 a 30 dias</li>
               <li>Pix ou cartão de crédito</li>
+              <li>Taxa de retirada no Brasil por conta do cliente</li>
             </ul>
             <div className="pdp-text">
               <h2>Sobre o produto</h2>

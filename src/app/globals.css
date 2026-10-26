@@ -201,6 +201,7 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .notice-head b { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
 .notice-head svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .notice strong { color: var(--ink); }
+.notice-key { border-top: 1px solid rgba(179,52,43,.3); padding-top: 10px; }
 .notice .link { align-self: flex-start; color: var(--ink); margin-top: 4px; }
 .note .link { margin-left: 6px; }
 .rules-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start; }
