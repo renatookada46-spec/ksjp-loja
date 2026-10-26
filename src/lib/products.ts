@@ -183,7 +183,7 @@ export const products: Product[] = [
     size: "3 produtos",
     shape: "jar",
     color: "#2a2420",
-    capColor: "#b3342b",
+    capColor: "#e892b0",
     tone: "#e4dccf",
     badge: { label: "Kit" },
     description:
