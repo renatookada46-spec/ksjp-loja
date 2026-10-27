@@ -173,8 +173,9 @@ export const products: Product[] = [
   },
   {
     slug: "shiseido-fino-mascara-capilar",
-    brand: "Shiseido",
-    name: "Fino Máscara Capilar Premium",
+    brand: "Fino",
+    name: "Máscara Capilar Premium Touch",
+    images: ["/destaques/fino-premium-touch.webp"],
     category: "cabelo",
     price: 89,
     size: "230 g",

@@ -402,6 +402,37 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 @media (max-width: 1023px) { .ritual-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .ritual { padding-block: 72px; } .ritual-steps { gap: 16px; } .ritual-steps b { font-size: 1.25rem; } .ritual-t { font-size: .84rem; } }
 
+/* Cena dos três mais desejados (GSAP + fumaça) */
+.trio { position: relative; overflow: hidden; background: radial-gradient(90% 70% at 50% 60%, #2a1a20 0%, var(--sumi) 70%); color: var(--washi); min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.trio-smoke { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; mix-blend-mode: screen; }
+.trio-glow { position: absolute; left: 50%; top: 58%; width: 70vmin; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgba(242,169,191,.28), rgba(214,178,120,.08) 45%, transparent 70%); filter: blur(10px); z-index: 0; }
+.trio-in { position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 28px; padding-block: 88px 72px; text-align: center; }
+.trio-head { display: flex; flex-direction: column; align-items: center; gap: 16px; position: relative; z-index: 3; }
+.trio-head .eyebrow { color: var(--sakura); }
+.trio-head h2 { font-size: clamp(2rem, 4.6vw, 3.8rem); line-height: 1.08; max-width: 15ch; }
+.trio-head em { font-style: normal; color: var(--sakura); }
+.trio-stage { width: 100%; max-width: 1180px; display: grid; grid-template-columns: 1fr 1.25fr 1fr; align-items: end; gap: 2vw; }
+.trio-item { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; will-change: transform, filter, opacity; }
+.trio-1 { z-index: 1; }
+.trio-0, .trio-2 { margin-bottom: 6%; }
+.trio-depth, .trio-float { width: 100%; }
+.trio-img { position: relative; width: 100%; aspect-ratio: 1; -webkit-mask-image: radial-gradient(closest-side, #000 58%, transparent 100%); mask-image: radial-gradient(closest-side, #000 58%, transparent 100%); }
+.trio-img img { object-fit: cover; }
+.trio-0 .trio-img img { object-fit: contain; padding: 8%; filter: drop-shadow(0 20px 40px rgba(0,0,0,.5)); }
+.trio-0 .trio-img { -webkit-mask-image: none; mask-image: none; }
+.trio-1 .trio-img img { object-position: 45% 62%; }
+.trio-cap { display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 3; }
+.trio-cap small { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--kin); }
+.trio-cap b { font-family: var(--font-display), serif; font-size: clamp(1.1rem, 1.8vw, 1.5rem); font-weight: 600; }
+.trio-cap span { font-size: .86rem; color: rgba(239,233,223,.72); }
+.trio-cta { position: relative; z-index: 3; }
+@media (max-width: 1023px) {
+  .trio-stage { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .trio-1 { grid-column: 1 / -1; order: -1; width: 78%; justify-self: center; }
+  .trio-0, .trio-2 { margin-bottom: 0; }
+  .trio-in { padding-block: 72px 56px; gap: 20px; }
+}
+
 /* Assistente virtual */
 .ai-launch { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 19; height: 48px; padding: 0 18px 0 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-family: inherit; color: var(--washi); font-size: .86rem; font-weight: 700; border: 1px solid rgba(242,169,191,.6); background: linear-gradient(180deg, rgba(60,30,42,.82), rgba(26,22,22,.86)); backdrop-filter: blur(14px) saturate(170%); -webkit-backdrop-filter: blur(14px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 8px 24px rgba(0,0,0,.35); transition: transform .25s; }
 .ai-launch:hover { transform: translateY(-2px); }
