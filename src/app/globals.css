@@ -261,7 +261,24 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .pay svg.wide { width: 30px; padding: 2px 4px; }
 .legal { border-top: 1px solid rgba(255,255,255,.08); margin-top: 48px; padding-top: 20px; font-size: .78rem; color: var(--ash); }
 
-.wa { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 18; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.6); background: linear-gradient(180deg, rgba(250,205,219,.92), rgba(220,120,155,.88)); backdrop-filter: blur(14px) saturate(170%); -webkit-backdrop-filter: blur(14px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 24px rgba(0,0,0,.35); }
+.wa { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 18; height: 48px; padding: 0 18px 0 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; color: #3a1022; font-size: .86rem; font-weight: 700; border: 1px solid rgba(255,255,255,.6); background: linear-gradient(180deg, rgba(250,205,219,.92), rgba(220,120,155,.88)); backdrop-filter: blur(14px) saturate(170%); -webkit-backdrop-filter: blur(14px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 24px rgba(0,0,0,.35); transition: transform .25s; }
+.wa:hover { transform: translateY(-2px); }
+
+/* Aviso grande do WhatsApp */
+.wa-band { padding-block: 56px; }
+.wa-notice { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px 28px; padding: 28px 32px; border-radius: 20px; border: 1px solid rgba(242,169,191,.4); }
+.wa-notice.dark { background: linear-gradient(135deg, rgba(242,169,191,.14), rgba(242,169,191,.04)); color: var(--washi); }
+.wa-notice.light { background: rgba(255,255,255,.5); color: var(--ink); border-color: rgba(201,106,138,.35); margin-bottom: 24px; }
+.wa-notice-icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #3a1022; background: linear-gradient(180deg, rgba(250,205,219,.95), rgba(236,148,177,.85)); box-shadow: inset 0 1px 0 rgba(255,255,255,.8); }
+.wa-notice-icon svg { width: 28px; height: 28px; }
+.wa-notice-text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.wa-notice h2 { font-size: clamp(1.4rem, 2.8vw, 2.1rem); line-height: 1.2; }
+.wa-notice h2 em { font-style: normal; color: var(--sakura); }
+.wa-notice.light h2 em { color: var(--beni); }
+.wa-notice p { font-size: .92rem; opacity: .8; }
+.pdp-info .wa-notice { grid-template-columns: auto 1fr; padding: 20px; margin-bottom: 0; }
+.pdp-info .wa-notice h2 { font-size: 1.25rem; }
+.pdp-info .wa-notice .btn { grid-column: 1 / -1; justify-self: start; }
 
 /* Tablet */
 @media (max-width: 1023px) {
@@ -314,6 +331,10 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
   .pdp-info { position: static; }
   .rules-list li { grid-template-columns: 44px 1fr; }
   .rules-side .btn { width: 100%; }
+  .wa-notice { grid-template-columns: auto 1fr; padding: 22px; }
+  .wa-notice .btn { grid-column: 1 / -1; justify-self: start; }
+  .wa-notice-icon { width: 46px; height: 46px; }
+  .wa { height: 44px; font-size: .8rem; }
   .pdp .price { flex-direction: row; gap: 10px; }
   .pdp .btn { width: 100%; }
   .foot { grid-template-columns: 1fr 1fr; gap: 28px 20px; }

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PriceBreakdown } from "@/components/PriceBreakdown";
 import { PurchaseNotice } from "@/components/PurchaseNotice";
+import { WhatsAppNotice } from "@/components/WhatsAppNotice";
 import { brl } from "@/lib/format";
-import { rules, site, whatsappLink } from "@/lib/site";
+import { rules, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Regras de compra",
@@ -87,13 +88,11 @@ export default function RulesPage() {
                 pedido com devolução total da entrada.
               </p>
             </div>
-            <a className="btn btn-red" href={whatsappLink("Olá! Tenho uma dúvida sobre as regras de compra.")} target="_blank" rel="noopener noreferrer">
-              Tirar dúvidas no WhatsApp
-            </a>
           </div>
         </div>
       </section>
       <section className="block wrap" aria-label="Resumo">
+        <WhatsAppNotice tone="light" message="Olá! Tenho uma dúvida sobre as regras antes de comprar." />
         <PurchaseNotice />
         <p className="note">
           Ao fazer um pedido, você concorda com estas regras. <Link className="link" href="/produtos">Ver a coleção</Link>

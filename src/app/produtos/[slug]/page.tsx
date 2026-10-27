@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductGrid } from "@/components/ProductCard";
 import { PurchaseNotice } from "@/components/PurchaseNotice";
+import { WhatsAppNotice } from "@/components/WhatsAppNotice";
 import { ProductVisual } from "@/components/ProductVisual";
 import { brl } from "@/lib/format";
 import { getCategory, getProduct, products } from "@/lib/products";
-import { site, whatsappLink } from "@/lib/site";
+import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,7 +29,7 @@ export default async function ProductPage({ params }: Props) {
 
   const category = getCategory(product.category);
   const related = products.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 4);
-  const message = `Olá! Quero comprar: ${product.brand} ${product.name} ${product.size} (${brl(product.price)}).`;
+  const message = `Olá! Tenho uma dúvida antes de comprar: ${product.brand} ${product.name} ${product.size} (${brl(product.price)}).`;
 
   return (
     <div className="paper">
@@ -51,11 +52,9 @@ export default async function ProductPage({ params }: Props) {
                 ou {site.installments}x de {brl(product.price / site.installments)} · {product.size}
               </span>
             </div>
-            {/* Na Etapa 3 este botão vira "Adicionar à sacola" com checkout Mercado Pago. */}
-            <a className="btn btn-red" href={whatsappLink(message)} target="_blank" rel="noopener noreferrer">
-              Comprar pelo WhatsApp
-            </a>
+            {/* Na Etapa 3 entra aqui o botão "Adicionar à sacola", com checkout Mercado Pago. */}
             <PurchaseNotice />
+            <WhatsAppNotice tone="light" message={message} />
             <ul className="pdp-perks">
               <li>Mesmo preço das lojas japonesas, sem acréscimo</li>
               <li>Comprado em loja oficial no Japão</li>

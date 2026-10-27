@@ -28,15 +28,14 @@ export function Footer() {
               <li><Link href="/regras">Regras de compra</Link></li>
               <li><Link href="/#como-funciona">Prazos e frete</Link></li>
               <li><Link href="/#kits">Impostos</Link></li>
-              <li><a href={whatsappLink("Olá! Tenho uma dúvida sobre trocas.")} target="_blank" rel="noopener noreferrer">Trocas</a></li>
-              <li><a href={whatsappLink("Olá! Vim pelo site.")} target="_blank" rel="noopener noreferrer">Fale conosco</a></li>
+              <li><a href={whatsappLink("Olá! Tenho uma dúvida antes de comprar.")} target="_blank" rel="noopener noreferrer">Dúvidas antes de comprar</a></li>
             </ul>
           </div>
           <div>
             <h4>Siga</h4>
             <ul>
               <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href={whatsappLink("Olá! Vim pelo site.")} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href={whatsappLink("Olá! Tenho uma dúvida antes de comprar.")} target="_blank" rel="noopener noreferrer">WhatsApp (só dúvidas antes de comprar)</a></li>
             </ul>
           </div>
         </div>

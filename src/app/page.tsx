@@ -6,6 +6,7 @@ import { ProductGrid } from "@/components/ProductCard";
 import { Kits } from "@/components/Kits";
 import { Curator } from "@/components/Curator";
 import { HowItWorks } from "@/components/HowItWorks";
+import { WhatsAppNotice } from "@/components/WhatsAppNotice";
 import { bestSellers } from "@/lib/products";
 
 export default function Home() {
@@ -31,6 +32,9 @@ export default function Home() {
         <Curator />
         <HowItWorks />
       </div>
+      <section className="wrap wa-band" aria-label="Dúvidas">
+        <WhatsAppNotice />
+      </section>
     </>
   );
 }
