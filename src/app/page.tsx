@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
-import { HeroTrio } from "@/components/HeroTrio";
 import { TrustBar } from "@/components/TrustBar";
 import { Categories } from "@/components/Categories";
 import { ProductGrid } from "@/components/ProductCard";
@@ -16,7 +15,6 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <HeroTrio />
       <div className="paper">
         <Categories />
         <section className="block wrap" aria-label="Mais vendidos">
