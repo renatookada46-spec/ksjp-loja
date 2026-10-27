@@ -21,7 +21,15 @@ export default async function ProductsPage({ searchParams }: Props) {
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1 }}>
               {current ? current.name : "Todos os produtos"}
             </h1>
+            <p className="collection-intro">
+              {current
+                ? current.intro
+                : "Tudo o que a nossa curadoria escolheu nas lojas oficiais do Japão. Mesmo preço de lá, sem acréscimo."}
+            </p>
           </div>
+          <span className="collection-count">
+            {list.length} {list.length === 1 ? "produto" : "produtos"}
+          </span>
         </div>
         <nav className="chips" aria-label="Filtrar por categoria">
           <Link className="chip" href="/produtos" aria-current={!current ? "page" : undefined}>

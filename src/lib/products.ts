@@ -11,6 +11,7 @@ export type Category = {
   slug: CategorySlug;
   name: string;
   description: string;
+  intro: string; // texto de abertura da página da categoria
 };
 
 export type ProductShape = "bottle" | "tube" | "jar";
@@ -42,11 +43,11 @@ export type Product = {
 };
 
 export const categories: Category[] = [
-  { slug: "skincare", name: "Skincare", description: "Hidratação e tratamento" },
-  { slug: "protetor-solar", name: "Protetor solar", description: "Texturas leves" },
-  { slug: "cabelo", name: "Cabelo", description: "Escovas e tratamentos" },
-  { slug: "maquiagem", name: "Maquiagem", description: "Canmake, Kate, Kose" },
-  { slug: "kits", name: "Kits", description: "Rotinas prontas para presentear" },
+  { slug: "skincare", name: "Skincare", description: "Hidratação e tratamento", intro: "Loções, séruns e limpeza que fazem a fama da pele japonesa. Texturas leves, resultado de verdade." },
+  { slug: "protetor-solar", name: "Protetor solar", description: "Texturas leves", intro: "O Japão leva o sol a sério. Protetores altos, leves e invisíveis, feitos para usar todos os dias." },
+  { slug: "cabelo", name: "Cabelo", description: "Escovas e tratamentos", intro: "Os tratamentos que os salões de Tóquio usam, para cabelo macio, brilhante e com movimento." },
+  { slug: "maquiagem", name: "Maquiagem", description: "Canmake, Kate, Kose", intro: "Cores delicadas e acabamento natural, do jeito que as japonesas gostam." },
+  { slug: "kits", name: "Kits", description: "Rotinas prontas para presentear", intro: "Rotinas completas montadas pela curadoria. Uma caixa só, pronta para presentear." },
 ];
 
 export const products: Product[] = [

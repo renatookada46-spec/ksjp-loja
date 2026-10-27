@@ -7,7 +7,7 @@ import { ProductVisual } from "./ProductVisual";
 export function ProductCard({ product }: { product: Product }) {
   const href = `/produtos/${product.slug}`;
   return (
-    <article className="card">
+    <article className="card reveal">
       <Link href={href} aria-label={product.name}>
         <ProductVisual product={product} />
       </Link>
@@ -18,6 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
             {product.name} {product.size}
           </Link>
         </h3>
+        {product.tagline && <p className="card-tagline">{product.tagline}</p>}
         <div className="price">
           <b>{brl(product.price)}</b>
           <span>

@@ -4,6 +4,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { Categories } from "@/components/Categories";
 import { ProductGrid } from "@/components/ProductCard";
 import { Kits } from "@/components/Kits";
+import { Ritual } from "@/components/Ritual";
 import { Curator } from "@/components/Curator";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhatsAppNotice } from "@/components/WhatsAppNotice";
@@ -27,6 +28,7 @@ export default function Home() {
           <ProductGrid products={bestSellers().slice(0, 8)} />
         </section>
       </div>
+      <Ritual />
       <Kits />
       <div className="paper">
         <Curator />

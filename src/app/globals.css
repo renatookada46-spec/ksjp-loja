@@ -378,6 +378,30 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
   .curator-note { padding-block: 64px; }
 }
 
+/* Loja premium: cards, ritual, vitrine e animação ao rolar */
+.card-tagline { font-size: .84rem; color: var(--ink-soft); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.collection-intro { max-width: 36rem; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.6; }
+.collection-count { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ash); }
+.ritual { background: var(--sumi); color: var(--washi); padding-block: 104px; background-image: radial-gradient(70% 60% at 80% 0%, rgba(242,169,191,.12), transparent 70%); }
+.ritual .eyebrow { color: var(--sakura); }
+.ritual-intro { max-width: 26rem; color: rgba(239,233,223,.75); }
+.ritual-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
+.ritual-steps a { display: flex; flex-direction: column; gap: 10px; position: relative; }
+.ritual-steps .stage { border-radius: 2px; }
+.ritual-steps a:hover .obj { transform: translateY(-8px); }
+.ritual-n { position: absolute; top: 12px; right: 14px; z-index: 2; font-family: var(--font-display), serif; font-size: 1.6rem; color: rgba(28,26,24,.35); }
+.ritual-steps b { font-family: var(--font-display), serif; font-size: 1.6rem; font-weight: 600; margin-top: 8px; }
+.ritual-t { color: rgba(239,233,223,.78); font-size: .92rem; }
+.ritual-p { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sakura); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1023px) { .ritual-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .ritual { padding-block: 72px; } .ritual-steps { gap: 16px; } .ritual-steps b { font-size: 1.25rem; } .ritual-t { font-size: .84rem; } }
+
 /* Assistente virtual */
 .ai-launch { position: fixed; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 19; height: 48px; padding: 0 18px 0 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-family: inherit; color: var(--washi); font-size: .86rem; font-weight: 700; border: 1px solid rgba(242,169,191,.6); background: linear-gradient(180deg, rgba(60,30,42,.82), rgba(26,22,22,.86)); backdrop-filter: blur(14px) saturate(170%); -webkit-backdrop-filter: blur(14px) saturate(170%); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 8px 24px rgba(0,0,0,.35); transition: transform .25s; }
 .ai-launch:hover { transform: translateY(-2px); }
@@ -407,6 +431,8 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 @media (max-width: 640px) {
   .ai-panel { inset: 0; width: auto; height: 100dvh; border-radius: 0; background: var(--washi); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
   .ai-launch.is-open { display: none; }
+  .ai-launch { width: 48px; padding: 0; justify-content: center; }
+  .ai-launch span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
