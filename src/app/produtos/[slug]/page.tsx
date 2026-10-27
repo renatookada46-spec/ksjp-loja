@@ -7,6 +7,7 @@ import { PurchaseNotice } from "@/components/PurchaseNotice";
 import { SakuraPetal } from "@/components/SakuraPetal";
 import { WhatsAppNotice } from "@/components/WhatsAppNotice";
 import { brl } from "@/lib/format";
+import { getLine } from "@/lib/lines";
 import { getCategory, getProduct, products } from "@/lib/products";
 import { site } from "@/lib/site";
 
@@ -33,6 +34,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound();
 
   const category = getCategory(product.category);
+  const line = product.line ? getLine(product.line) : undefined;
   const pairs = (product.pairsWith ?? []).map(getProduct).filter((p) => p !== undefined);
   const related = pairs.length
     ? pairs
@@ -61,6 +63,11 @@ export default async function ProductPage({ params }: Props) {
             <div className="eyebrow">{product.brand}</div>
             <h1>{product.name}</h1>
             {product.tagline && <p className="pdp-tagline">{product.tagline}</p>}
+            {line && (
+              <Link className="link pdp-line" href={`/linhas/${line.slug}`}>
+                Ver a linha {line.brand} {line.name} completa
+              </Link>
+            )}
             <div className="price">
               <b>{brl(product.price)}</b>
               <span>

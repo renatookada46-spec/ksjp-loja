@@ -1,9 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getLine } from "@/lib/lines";
+import { getProduct, type Product } from "@/lib/products";
 import { PetalCanvas } from "./PetalCanvas";
+import { ProductVisual } from "./ProductVisual";
 import heroImage from "../../public/hero.webp";
 
+// Linha em destaque na abertura. Troque o slug para destacar outra linha.
+const FEATURED = "refa-honey-queen";
+
 export function Hero() {
+  const line = getLine(FEATURED);
+  const featured = (line?.products ?? [])
+    .slice(0, 3)
+    .map(getProduct)
+    .filter((p): p is Product => p !== undefined);
+
   return (
     <section className="hero" aria-label="Abertura">
       <Image
@@ -36,6 +48,28 @@ export function Hero() {
             </Link>
           </div>
         </div>
+        {line && featured.length > 0 && (
+          <Link className="hero-feature" href={`/linhas/${line.slug}`}>
+            <div className="hero-feature-bottles" aria-hidden="true">
+              {featured.map((p) =>
+                p.images?.[0] ? (
+                  <div key={p.slug} className="hero-feature-photo">
+                    <Image src={p.images[0]} alt="" fill sizes="160px" />
+                  </div>
+                ) : (
+                  <ProductVisual key={p.slug} product={{ ...p, badge: undefined }} />
+                ),
+              )}
+            </div>
+            <div className="hero-feature-text">
+              <span className="eyebrow">Novidade</span>
+              <b>
+                {line.brand} {line.name}
+              </b>
+              <span>Conheça a linha</span>
+            </div>
+          </Link>
+        )}
       </div>
       <span className="scroll-hint" aria-hidden="true" />
     </section>

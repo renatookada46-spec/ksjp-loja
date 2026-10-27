@@ -1,3 +1,5 @@
+import { fromYen } from "@/lib/site";
+
 // Catálogo de exemplo da Etapa 1. Na Etapa 2 estes dados passam a vir do Supabase.
 
 export type CategorySlug =
@@ -40,6 +42,8 @@ export type Product = {
   ingredients?: { name: string; benefit: string }[];
   curatorNote?: string; // por que a curadoria escolheu este produto
   pairsWith?: string[]; // slugs de produtos que combinam
+  priceYen?: number; // preço na loja japonesa, só para referência interna
+  line?: string; // linha de produtos com página própria, ex.: "refa-honey-queen"
 };
 
 export const categories: Category[] = [
@@ -259,6 +263,157 @@ export const products: Product[] = [
     forWho: ["Quem está começando", "Presente"],
     texture: "Três texturas leves",
     curatorNote: "Se você não sabe por onde começar, comece por aqui.",
+  },
+  // ReFa Honey Queen: produtos reais, preços da loja oficial no Japão convertidos para reais.
+  {
+    slug: "refa-honey-queen-shampoo",
+    brand: "ReFa",
+    name: "Honey Queen Shampoo",
+    category: "cabelo",
+    priceYen: 2860,
+    price: fromYen(2860),
+    size: "500 ml",
+    shape: "bottle",
+    color: "#c9862a",
+    capColor: "#c9a24a",
+    tone: "#f1dfb8",
+    badge: { label: "Novo", highlight: true },
+    bestSeller: true,
+    line: "refa-honey-queen",
+    tagline: "Espuma densa de mel que lava e hidrata ao mesmo tempo.",
+    description:
+      "Shampoo de espuma cremosa e firme, com muito mel na fórmula. Lava com delicadeza e deixa o cabelo danificado macio e hidratado, com perfume de limão e mel.",
+    howToUse:
+      "Molhe bem o cabelo, faça um pouco de espuma nas mãos e lave fios e couro cabeludo com a ponta dos dedos. Enxágue bem para não deixar resíduo no couro cabeludo.",
+    highlights: ["Geleia real da abelha rainha", "Espuma cremosa de mel", "Para cabelo danificado"],
+    forWho: ["Cabelo danificado", "Cabelo ressecado", "Química e escova"],
+    texture: "Espuma cremosa e firme",
+    ingredients: [
+      { name: "Geleia real", benefit: "Mais de 40 nutrientes que hidratam o fio em nível de reparação." },
+      { name: "Mel", benefit: "Atrai e segura a água, formando uma barreira de hidratação." },
+    ],
+    curatorNote: "O frasco mais bonito do banheiro japonês. E a espuma é tão boa quanto a embalagem.",
+    pairsWith: ["refa-honey-queen-treatment", "refa-honey-queen-outbath"],
+  },
+  {
+    slug: "refa-honey-queen-treatment",
+    brand: "ReFa",
+    name: "Honey Queen Treatment",
+    category: "cabelo",
+    priceYen: 2860,
+    price: fromYen(2860),
+    size: "500 g",
+    shape: "bottle",
+    color: "#efe4cc",
+    capColor: "#c9a24a",
+    tone: "#f3e6c9",
+    bestSeller: true,
+    line: "refa-honey-queen",
+    tagline: "Leva o mel até o fio danificado e sela a hidratação.",
+    description:
+      "Condicionador de tratamento com geleia real e mel, que chegam até as partes mais danificadas do fio. Textura rica em óleos que deixa o cabelo macio, alinhado e fácil de pentear.",
+    howToUse:
+      "Depois do shampoo, tire o excesso de água, espalhe no cabelo todo e enxágue. Dica: passe um pente para espalhar por igual.",
+    highlights: ["Geleia real e mel", "Sela a hidratação", "Cabelo alinhado"],
+    forWho: ["Cabelo danificado", "Cabelo com frizz", "Pontas ressecadas"],
+    texture: "Creme rico e oleoso",
+    ingredients: [
+      { name: "Geleia real", benefit: "Repara e hidrata as partes danificadas." },
+      { name: "Ceramidas", benefit: "Ajudam a manter a água dentro do fio." },
+    ],
+    curatorNote: "Sozinho já é ótimo. Junto com o shampoo da mesma linha, é outro cabelo.",
+    pairsWith: ["refa-honey-queen-shampoo", "refa-honey-queen-outbath"],
+  },
+  {
+    slug: "refa-honey-queen-outbath",
+    brand: "ReFa",
+    name: "Honey Queen Óleo Capilar",
+    category: "cabelo",
+    priceYen: 2860,
+    price: fromYen(2860),
+    size: "130 ml",
+    shape: "bottle",
+    color: "#d99a3a",
+    capColor: "#c9a24a",
+    tone: "#f2ddb0",
+    line: "refa-honey-queen",
+    tagline: "Brilho de mel, sem pesar e sem deixar o cabelo oleoso.",
+    description:
+      "Óleo capilar sem enxágue que leva mel a todo o fio, com óleo de macadâmia para espalhar fácil. Deixa o cabelo brilhante e macio ao toque, sem ficar pesado.",
+    howToUse:
+      "Com o cabelo úmido, depois da toalha, ou seco, espalhe um pouco nas mãos e aplique do meio do comprimento até as pontas.",
+    highlights: ["Sem enxágue", "Brilho sem pesar", "Mel e macadâmia"],
+    forWho: ["Cabelo opaco", "Pontas ressecadas", "Finalização"],
+    texture: "Óleo leve",
+    ingredients: [
+      { name: "Mel", benefit: "Hidrata o fio por inteiro." },
+      { name: "Óleo de macadâmia", benefit: "Ajuda o mel a penetrar e deixa o toque sedoso." },
+    ],
+    curatorNote: "O último passo que faz a diferença na foto. Duas gotas bastam.",
+    pairsWith: ["refa-honey-queen-shampoo", "refa-honey-queen-treatment"],
+  },
+  {
+    slug: "refa-honey-queen-scalp",
+    brand: "ReFa",
+    name: "Honey Queen Escova de Couro Cabeludo",
+    category: "cabelo",
+    priceYen: 3300,
+    price: fromYen(3300),
+    size: "1 unidade",
+    shape: "jar",
+    color: "#e8d3a2",
+    capColor: "#c9a24a",
+    tone: "#f1e3c2",
+    line: "refa-honey-queen",
+    tagline: "Massageia e limpa o couro cabeludo enquanto você lava.",
+    description:
+      "Escova para usar no banho, com o shampoo. Os pinos em formato de colmeia chegam ao couro cabeludo em qualquer tipo e comprimento de cabelo, ajudam a fazer mais espuma e limpam a fundo.",
+    howToUse: "Use durante o shampoo, com movimentos suaves por todo o couro cabeludo.",
+    highlights: ["Uso no banho", "Pinos em colmeia", "Limpeza profunda"],
+    forWho: ["Todos os tipos de cabelo", "Couro cabeludo oleoso"],
+    texture: "Pinos macios",
+    curatorNote: "Parece um detalhe, mas depois que você usa no banho não quer mais lavar sem ela.",
+    pairsWith: ["refa-honey-queen-shampoo"],
+  },
+  {
+    slug: "refa-honey-queen-kit-duo",
+    brand: "ReFa",
+    name: "Kit Honey Queen Shampoo e Treatment",
+    category: "kits",
+    priceYen: 5720,
+    price: fromYen(5720),
+    size: "500 ml + 500 g",
+    shape: "jar",
+    color: "#d9a54a",
+    capColor: "#c9a24a",
+    tone: "#f1dfb8",
+    badge: { label: "Presente" },
+    line: "refa-honey-queen",
+    tagline: "A dupla que transforma o banho num ritual.",
+    description: "Shampoo Honey Queen 500 ml e Treatment Honey Queen 500 g.",
+    howToUse: "Shampoo primeiro, enxágue, depois o treatment no cabelo todo e enxágue de novo.",
+    highlights: ["Shampoo 500 ml", "Treatment 500 g", "Ótimo para presente"],
+    curatorNote: "O presente que a gente mais indica para quem ama cabelo bonito.",
+  },
+  {
+    slug: "refa-honey-queen-kit-trio",
+    brand: "ReFa",
+    name: "Kit Honey Queen Rotina Completa",
+    category: "kits",
+    priceYen: 8580,
+    price: fromYen(8580),
+    size: "3 produtos",
+    shape: "jar",
+    color: "#c9862a",
+    capColor: "#c9a24a",
+    tone: "#f2ddb0",
+    badge: { label: "Presente" },
+    line: "refa-honey-queen",
+    tagline: "Lavar, tratar e finalizar com mel, do começo ao fim.",
+    description: "Shampoo Honey Queen 500 ml, Treatment Honey Queen 500 g e Óleo Capilar Honey Queen 130 ml.",
+    howToUse: "Shampoo, treatment e, com o cabelo úmido ou seco, o óleo do meio às pontas.",
+    highlights: ["Shampoo 500 ml", "Treatment 500 g", "Óleo capilar 130 ml"],
+    curatorNote: "A rotina inteira de uma vez. É assim que ela mostra o que sabe fazer.",
   },
 ];
 

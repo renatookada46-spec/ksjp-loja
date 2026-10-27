@@ -15,6 +15,17 @@ export const rules = {
   holdDays: 15,
 };
 
+// Cotação usada para mostrar o preço da loja japonesa em reais. Atualize quando o câmbio mudar.
+// Exemplo: 0.036 quer dizer que 1 iene vale R$ 0,036 (¥ 1.000 = R$ 36).
+export const exchange = {
+  yenToReal: 0.036,
+};
+
+// Converte o preço da loja japonesa (em ienes) para reais, sem acréscimo.
+export function fromYen(yen: number) {
+  return Math.round(yen * exchange.yenToReal * 100) / 100;
+}
+
 export function whatsappLink(message: string) {
   const text = encodeURIComponent(message);
   return site.whatsapp
