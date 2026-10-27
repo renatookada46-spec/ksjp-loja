@@ -48,12 +48,14 @@ src/
 - **Produtos e preços:** `src/lib/products.ts`, até a Etapa 2.
 - **Cores:** as variáveis no topo de `src/app/globals.css`.
 - **Imagem da abertura:** troque `public/hero.webp` por outra imagem com o mesmo nome.
+- **Assistente virtual:** o que ela sabe vem de `src/lib/assistant.ts` (catálogo e regras). A rota fica em `src/app/api/assistente/route.ts` e a janela em `src/components/Assistant.tsx`. Precisa da variável `ANTHROPIC_API_KEY` na Vercel.
 - **Logo:** o texto vem de `src/lib/site.ts` e a pétala de `src/components/SakuraPetal.tsx`.
 
 ## Etapas
 
 - [x] Etapa 1: vitrine, página de produto e visual cinema
-- [ ] Etapa 2: produtos no Supabase e painel admin
+- [x] Assistente virtual com IA (Claude) respondendo dúvidas
+- [ ] Etapa 2: cadastro de clientes e painel admin (pausada)
 - [ ] Etapa 3: carrinho e checkout Mercado Pago
 - [ ] Etapa 4: pedidos, confirmação de pagamento e e-mails
 - [ ] Etapa 5: publicar na Vercel com o ksjp.app

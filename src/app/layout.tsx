@@ -3,6 +3,7 @@ import { Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Assistant } from "@/components/Assistant";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Assistant />
       </body>
     </html>
   );

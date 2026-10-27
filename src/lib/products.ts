@@ -37,7 +37,7 @@ export const categories: Category[] = [
   { slug: "protetor-solar", name: "Protetor solar", description: "Texturas leves" },
   { slug: "cabelo", name: "Cabelo", description: "Escovas e tratamentos" },
   { slug: "maquiagem", name: "Maquiagem", description: "Canmake, Kate, Kose" },
-  { slug: "kits", name: "Kits", description: "Até US$ 50, sem susto" },
+  { slug: "kits", name: "Kits", description: "Rotinas prontas para presentear" },
 ];
 
 export const products: Product[] = [
