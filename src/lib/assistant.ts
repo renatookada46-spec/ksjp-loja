@@ -11,9 +11,17 @@ function catalogText() {
       return [
         `- ${p.brand} ${p.name} (${p.size})`,
         `  Categoria: ${category}. Preço: ${brl(p.price)}. Página: /produtos/${p.slug}`,
+        p.tagline ? `  Frase: ${p.tagline}` : "",
         `  Sobre: ${p.description}`,
+        p.highlights?.length ? `  Destaques: ${p.highlights.join("; ")}` : "",
+        p.forWho?.length ? `  Indicado para: ${p.forWho.join(", ")}` : "",
+        p.texture ? `  Textura: ${p.texture}` : "",
+        p.ingredients?.length ? `  Ativos: ${p.ingredients.map((i) => `${i.name} (${i.benefit})`).join("; ")}` : "",
+        p.curatorNote ? `  Nota da curadoria: ${p.curatorNote}` : "",
         `  Como usar: ${p.howToUse}`,
-      ].join("\n");
+      ]
+        .filter(Boolean)
+        .join("\n");
     })
     .join("\n");
 }

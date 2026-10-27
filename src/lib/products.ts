@@ -30,6 +30,15 @@ export type Product = {
   bestSeller?: boolean;
   description: string;
   howToUse: string;
+  // Campos da página premium. Todos opcionais: preencha aos poucos.
+  images?: string[]; // fotos em /public/produtos/<slug>/, ex.: "/produtos/<slug>/1.webp"
+  tagline?: string; // uma frase que dá vontade de comprar
+  highlights?: string[]; // até 3 benefícios curtos
+  forWho?: string[]; // tipos de pele ou de cabelo
+  texture?: string;
+  ingredients?: { name: string; benefit: string }[];
+  curatorNote?: string; // por que a curadoria escolheu este produto
+  pairsWith?: string[]; // slugs de produtos que combinam
 };
 
 export const categories: Category[] = [
@@ -58,6 +67,13 @@ export const products: Product[] = [
       "A loção hidratante mais vendida do Japão. Tem quatro tipos de ácido hialurônico e deixa a pele macia e com aspecto saudável, sem pesar.",
     howToUse:
       "Depois de lavar o rosto, aplique na palma da mão e espalhe com leves batidinhas até absorver. Use de manhã e à noite.",
+    tagline: "Hidratação profunda que a pele bebe em segundos.",
+    highlights: ["4 tipos de ácido hialurônico", "Sem fragrância e sem corante", "Textura que não pesa"],
+    forWho: ["Todos os tipos de pele", "Pele seca", "Pele desidratada"],
+    texture: "Loção levemente encorpada",
+    ingredients: [{"name": "Ácido hialurônico", "benefit": "Segura a água na pele e deixa o toque macio."}, {"name": "Ácido hialurônico nano", "benefit": "Partículas menores que hidratam as camadas mais fundas."}],
+    curatorNote: "É o frasco que mais some das prateleiras das farmácias japonesas. Simples, honesto e funciona.",
+    pairsWith: ["dhc-oleo-de-limpeza", "biore-uv-aqua-rich-watery-essence"],
   },
   {
     slug: "anessa-perfect-uv-gel-fps50",
@@ -76,6 +92,13 @@ export const products: Product[] = [
       "Protetor solar em gel de alta proteção, resistente a água e suor. Textura leve que não deixa a pele branca.",
     howToUse:
       "Aplique como último passo do skincare, 15 minutos antes de sair ao sol. Reaplique a cada 2 horas.",
+    tagline: "A proteção que aguenta sol, praia e calor.",
+    highlights: ["FPS 50+ PA++++", "Resistente a água e suor", "Não deixa a pele branca"],
+    forWho: ["Todos os tipos de pele", "Praia e esporte", "Dias de calor forte"],
+    texture: "Gel fresco",
+    ingredients: [{"name": "Filtros UVA e UVB", "benefit": "Proteção alta contra queimadura e manchas."}, {"name": "Tecnologia Auto Booster", "benefit": "A proteção fica mais forte com calor, suor e água."}],
+    curatorNote: "O protetor que as japonesas levam para a praia. A gente usa o verão inteiro.",
+    pairsWith: ["dhc-oleo-de-limpeza", "hada-labo-gokujyun-locao-hialuronica"],
   },
   {
     slug: "biore-uv-aqua-rich-watery-essence",
@@ -92,6 +115,13 @@ export const products: Product[] = [
     description:
       "O protetor queridinho do Japão, com textura de essência aquosa. Seca rápido e funciona bem embaixo da maquiagem.",
     howToUse: "Espalhe uma quantidade generosa no rosto e no pescoço. Reaplique ao longo do dia.",
+    tagline: "Leve como água, protege como deve.",
+    highlights: ["FPS 50+ PA++++", "Textura aquosa", "Ótimo por baixo da maquiagem"],
+    forWho: ["Pele oleosa", "Pele mista", "Uso diário"],
+    texture: "Essência aquosa em gel",
+    ingredients: [{"name": "Ácido hialurônico", "benefit": "Hidrata sem deixar a pele pesada."}, {"name": "Filtros UVA e UVB", "benefit": "Proteção alta para o dia a dia."}],
+    curatorNote: "Para quem odeia sentir protetor no rosto. Ele some na pele.",
+    pairsWith: ["hada-labo-gokujyun-locao-hialuronica", "melano-cc-serum-vitamina-c"],
   },
   {
     slug: "melano-cc-serum-vitamina-c",
@@ -109,6 +139,13 @@ export const products: Product[] = [
     description:
       "Sérum com vitamina C pura que ajuda a uniformizar o tom da pele e suavizar manchas de espinhas.",
     howToUse: "À noite, aplique 2 ou 3 gotas nas áreas com manchas, antes do hidratante.",
+    tagline: "Vitamina C para manchas e pele sem brilho.",
+    highlights: ["Vitamina C ativa", "Age em manchas e marcas", "Conta-gotas preciso"],
+    forWho: ["Manchas", "Marcas de acne", "Pele opaca"],
+    texture: "Sérum leve, levemente oleoso",
+    ingredients: [{"name": "Vitamina C", "benefit": "Clareia e uniformiza o tom da pele."}, {"name": "Vitamina E", "benefit": "Ajuda a proteger a pele."}],
+    curatorNote: "Um clássico japonês que custa pouco e entrega muito. Comece usando à noite.",
+    pairsWith: ["biore-uv-aqua-rich-watery-essence", "hada-labo-gokujyun-locao-hialuronica"],
   },
   {
     slug: "kose-sekkisei-locao",
@@ -125,6 +162,13 @@ export const products: Product[] = [
     description:
       "Clássico japonês com extratos de plantas que deixa a pele luminosa e com textura uniforme.",
     howToUse: "Aplique com algodão ou com as mãos, depois de lavar o rosto, de manhã e à noite.",
+    tagline: "O segredo da pele luminosa das japonesas.",
+    highlights: ["Extratos de ervas orientais", "Ilumina e uniformiza", "Sensação refrescante"],
+    forWho: ["Pele opaca", "Pele mista a oleosa", "Tom irregular"],
+    texture: "Loção aquosa",
+    ingredients: [{"name": "Extrato de coix", "benefit": "Ilumina e acalma a pele."}, {"name": "Extrato de angélica", "benefit": "Ajuda a deixar o tom mais uniforme."}],
+    curatorNote: "O frasco azul que está em toda penteadeira japonesa. Um luxo do dia a dia.",
+    pairsWith: ["anessa-perfect-uv-gel-fps50", "dhc-oleo-de-limpeza"],
   },
   {
     slug: "shiseido-fino-mascara-capilar",
@@ -141,6 +185,13 @@ export const products: Product[] = [
     description:
       "Máscara de tratamento intensivo que recupera fios danificados e deixa o cabelo macio e brilhante.",
     howToUse: "Depois do shampoo, aplique no comprimento e nas pontas, deixe agir de 3 a 5 minutos e enxágue.",
+    tagline: "Cabelo de salão, em casa, em 5 minutos.",
+    highlights: ["Maciez e brilho", "Ação rápida", "Para cabelo danificado"],
+    forWho: ["Cabelo danificado", "Cabelo seco", "Química e escova"],
+    texture: "Máscara cremosa",
+    ingredients: [{"name": "Geleia real", "benefit": "Nutrição profunda para os fios."}, {"name": "Óleos nutritivos", "benefit": "Brilho e toque sedoso."}],
+    curatorNote: "A máscara capilar mais vendida do Japão. Um pote dura meses.",
+    pairsWith: ["canmake-cream-cheek-sakura"],
   },
   {
     slug: "canmake-cream-cheek-sakura",
@@ -157,6 +208,12 @@ export const products: Product[] = [
     bestSeller: true,
     description: "Blush cremoso de cor delicada que se funde à pele e dá um efeito natural de bochecha corada.",
     howToUse: "Aplique com a ponta dos dedos nas maçãs do rosto e esfume com batidinhas.",
+    tagline: "Bochecha corada e natural, em segundos.",
+    highlights: ["Textura cremosa", "Efeito natural", "Fácil de esfumar"],
+    forWho: ["Todos os tipos de pele", "Maquiagem leve"],
+    texture: "Creme",
+    curatorNote: "Edição da estação, daquelas que esgotam rápido no Japão.",
+    pairsWith: ["biore-uv-aqua-rich-watery-essence"],
   },
   {
     slug: "dhc-oleo-de-limpeza",
@@ -173,6 +230,13 @@ export const products: Product[] = [
     description:
       "Óleo de limpeza com azeite de oliva que remove maquiagem e protetor solar sem ressecar a pele.",
     howToUse: "Com o rosto seco, massageie o óleo por 30 segundos, adicione água para emulsionar e enxágue.",
+    tagline: "Remove tudo e deixa a pele macia, sem repuxar.",
+    highlights: ["Óleo de oliva", "Tira maquiagem e protetor", "Não deixa resíduo"],
+    forWho: ["Todos os tipos de pele", "Quem usa maquiagem ou protetor"],
+    texture: "Óleo que vira leite com água",
+    ingredients: [{"name": "Óleo de oliva", "benefit": "Limpa e suaviza ao mesmo tempo."}, {"name": "Vitamina E", "benefit": "Ajuda a proteger a pele."}],
+    curatorNote: "O primeiro passo da dupla limpeza japonesa. Depois dele, você não volta atrás.",
+    pairsWith: ["hada-labo-gokujyun-locao-hialuronica", "anessa-perfect-uv-gel-fps50"],
   },
   {
     slug: "kit-rotina-hidratacao",
@@ -189,6 +253,11 @@ export const products: Product[] = [
     description:
       "Óleo de limpeza, loção hialurônica e protetor solar. A rotina completa, montada para ficar dentro do limite de US$ 50.",
     howToUse: "Limpeza à noite, loção de manhã e à noite, protetor solar todas as manhãs.",
+    tagline: "A rotina japonesa completa, numa caixa só.",
+    highlights: ["3 passos", "Limpeza, hidratação e proteção", "Pronto para presentear"],
+    forWho: ["Quem está começando", "Presente"],
+    texture: "Três texturas leves",
+    curatorNote: "Se você não sabe por onde começar, comece por aqui.",
   },
 ];
 
