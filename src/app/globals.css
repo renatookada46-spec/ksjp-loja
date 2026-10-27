@@ -126,6 +126,9 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .card { display: flex; flex-direction: column; min-width: 0; }
 .stage { position: relative; aspect-ratio: 4/5; max-width: 100%; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18%; overflow: hidden; background: radial-gradient(120% 80% at 50% 100%, var(--tone, #e8dccd), #f6f1e9 70%); }
 .stage.lg { aspect-ratio: 1; }
+.stage.photo { padding: 0; background: #f6f1e9; }
+.stage.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.card:hover .stage.photo img { transform: scale(1.04); }
 .shadow { position: absolute; bottom: calc(18% - 6px); left: 50%; translate: -50% 0; width: 48%; height: 12px; border-radius: 50%; background: rgba(0,0,0,.14); filter: blur(6px); }
 .obj { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .card:hover .obj { transform: translateY(-8px); }

@@ -7,9 +7,12 @@ import { Kits } from "@/components/Kits";
 import { Curator } from "@/components/Curator";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhatsAppNotice } from "@/components/WhatsAppNotice";
-import { bestSellers } from "@/lib/products";
+import { getBestSellers } from "@/lib/catalog";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const bestSellers = await getBestSellers();
   return (
     <>
       <Hero />
@@ -24,7 +27,7 @@ export default function Home() {
             </div>
             <Link className="link" href="/produtos">Ver todos os produtos</Link>
           </div>
-          <ProductGrid products={bestSellers().slice(0, 8)} />
+          <ProductGrid products={bestSellers} />
         </section>
       </div>
       <Kits />

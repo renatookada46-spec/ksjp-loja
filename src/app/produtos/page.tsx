@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductGrid } from "@/components/ProductCard";
-import { categories, getCategory, products } from "@/lib/products";
+import { getProducts } from "@/lib/catalog";
+import { categories, getCategory } from "@/lib/products";
 
 export const metadata: Metadata = { title: "Produtos" };
 
@@ -10,6 +11,7 @@ type Props = { searchParams: Promise<{ categoria?: string }> };
 export default async function ProductsPage({ searchParams }: Props) {
   const { categoria } = await searchParams;
   const current = categoria ? getCategory(categoria) : undefined;
+  const products = await getProducts();
   const list = current ? products.filter((p) => p.category === current.slug) : products;
 
   return (

@@ -1,8 +1,20 @@
 import type { CSSProperties } from "react";
 import type { Product } from "@/lib/products";
 
-// Embalagem desenhada em CSS. Na Etapa 2 é substituída pela foto real do produto.
+// Foto do produto quando existe; senão, a embalagem desenhada em CSS.
 export function ProductVisual({ product, large = false }: { product: Product; large?: boolean }) {
+  if (product.imageUrl) {
+    return (
+      <div className={large ? "stage lg photo" : "stage photo"}>
+        {product.badge && (
+          <span className={product.badge.highlight ? "badge red" : "badge"}>{product.badge.label}</span>
+        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={product.imageUrl} alt={`${product.brand} ${product.name}`} loading="lazy" />
+      </div>
+    );
+  }
+
   const dark = product.color === "#2a2420";
   const body = (
     <div className="body gloss" style={{ "--c": product.color } as CSSProperties}>

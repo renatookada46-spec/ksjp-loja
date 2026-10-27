@@ -1,4 +1,4 @@
-// Catálogo de exemplo da Etapa 1. Na Etapa 2 estes dados passam a vir do Supabase.
+// Catálogo de exemplo. É usado enquanto o banco (Supabase) não tiver produtos cadastrados.
 
 export type CategorySlug =
   | "skincare"
@@ -16,6 +16,7 @@ export type Category = {
 export type ProductShape = "bottle" | "tube" | "jar";
 
 export type Product = {
+  id?: string;
   slug: string;
   brand: string;
   name: string;
@@ -30,6 +31,8 @@ export type Product = {
   bestSeller?: boolean;
   description: string;
   howToUse: string;
+  imageUrl?: string | null;
+  active?: boolean;
 };
 
 export const categories: Category[] = [
@@ -40,7 +43,7 @@ export const categories: Category[] = [
   { slug: "kits", name: "Kits", description: "Até US$ 50, sem susto" },
 ];
 
-export const products: Product[] = [
+export const sampleProducts: Product[] = [
   {
     slug: "hada-labo-gokujyun-locao-hialuronica",
     brand: "Hada Labo",
@@ -192,14 +195,6 @@ export const products: Product[] = [
   },
 ];
 
-export function getProduct(slug: string) {
-  return products.find((p) => p.slug === slug);
-}
-
 export function getCategory(slug: string) {
   return categories.find((c) => c.slug === slug);
-}
-
-export function bestSellers() {
-  return products.filter((p) => p.bestSeller);
 }

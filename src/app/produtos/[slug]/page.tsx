@@ -6,25 +6,30 @@ import { PurchaseNotice } from "@/components/PurchaseNotice";
 import { WhatsAppNotice } from "@/components/WhatsAppNotice";
 import { ProductVisual } from "@/components/ProductVisual";
 import { brl } from "@/lib/format";
-import { getCategory, getProduct, products } from "@/lib/products";
+import { getProductBySlug, getProducts } from "@/lib/catalog";
+import { getCategory } from "@/lib/products";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const products = await getProducts();
   return products.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProductBySlug(slug);
   if (!product) return {};
   return { title: `${product.brand} ${product.name}`, description: product.description };
 }
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const products = await getProducts();
+  const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
   const category = getCategory(product.category);
