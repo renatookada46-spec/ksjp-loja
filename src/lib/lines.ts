@@ -10,11 +10,12 @@ export type Line = {
   subtitle: string;
   heroImage?: string; // foto grande da abertura, em /public/linhas/<slug>/
   theme?: "rose"; // cor da abertura sem foto: dourado (padrão) ou rosa perolado
+  heroKv?: { wide: string; tall: string; alt: string }; // foto oficial da linha (abertura de cinema): larga e alta
   lead: { title: string; text: string };
   products: string[]; // slugs dos produtos da linha, na ordem
   kits: string[];
   about: { title: string; items: { name: string; text: string; image?: string }[] };
-  scene?: { title: string; text: string; fragrance?: { name: string; notes: { label: string; value: string }[] } };
+  scene?: { title: string; text: string; image?: string; fragrance?: { name: string; notes: { label: string; value: string }[] } };
   steps: { title: string; text: string; tip?: string; product?: string }[];
   faq: { q: string; a: string }[];
 };
@@ -120,6 +121,11 @@ export const lines: Line[] = [
     title: "Cabelo de salão, em casa.",
     subtitle: "A linha de tratamento da Shiseido que virou clássico nas farmácias do Japão: máscara, leite e óleo para o cabelo danificado.",
     theme: "rose",
+    heroKv: {
+      wide: "/linhas/fino-premium-touch/hero-wide.webp",
+      tall: "/linhas/fino-premium-touch/hero.webp",
+      alt: "Linha Fino Premium Touch: máscara, óleo, sérum e leite capilar",
+    },
     lead: {
       title: "Cinco minutos no banho, o dia inteiro de maciez.",
       text: "A máscara Fino é uma das mais vendidas do Japão há anos. Com textura de sérum concentrado, ela trata os danos do dia a dia, e o leite e o óleo sem enxágue mantêm o cabelo protegido e com brilho até a próxima lavagem.",
@@ -142,6 +148,7 @@ export const lines: Line[] = [
     scene: {
       title: "Textura cremosa, toque sedoso e um perfume floral suave.",
       text: "A máscara espalha fácil e enxágua rápido. Depois, uma pequena quantidade de leite ou de óleo basta para deixar o cabelo leve, solto e com brilho.",
+      image: "/produtos/fino-premium-touch-oficial.webp",
     },
     steps: [
       {

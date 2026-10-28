@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FinoHero } from "@/components/FinoHero";
 import { HoneyHero } from "@/components/HoneyHero";
 import { LineHero } from "@/components/LineHero";
 import { ProductVisual } from "@/components/ProductVisual";
@@ -37,8 +39,14 @@ export default async function LinePage({ params }: Props) {
   const kits = pick(line.kits);
 
   return (
-    <>
-      {line.heroImage ? <HoneyHero line={line} /> : <LineHero line={line} products={products} />}
+    <div className={line.theme ? `ln-theme-${line.theme}` : undefined}>
+      {line.heroKv ? (
+        <FinoHero line={line} />
+      ) : line.heroImage ? (
+        <HoneyHero line={line} />
+      ) : (
+        <LineHero line={line} products={products} />
+      )}
 
       <div className="paper">
         <section className="block wrap ln-lead">
@@ -95,6 +103,11 @@ export default async function LinePage({ params }: Props) {
                     </div>
                   ))}
                 </dl>
+              </div>
+            )}
+            {line.scene.image && !line.scene.fragrance && (
+              <div className="ln-scene-photo reveal">
+                <Image src={line.scene.image} alt={`${line.brand} ${line.name}`} fill sizes="(max-width: 1023px) 80vw, 40vw" />
               </div>
             )}
           </div>
@@ -222,6 +235,6 @@ export default async function LinePage({ params }: Props) {
           <WhatsAppNotice tone="light" message={`Olá! Tenho uma dúvida antes de comprar a linha ${line.brand} ${line.name}.`} />
         </section>
       </div>
-    </>
+    </div>
   );
 }
