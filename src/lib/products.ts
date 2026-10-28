@@ -328,6 +328,7 @@ export const products: Product[] = [
   },
   {
     slug: "refa-honey-queen-outbath",
+    images: ["/produtos/refa-honey-queen/oleo.webp"],
     brand: "ReFa",
     name: "Honey Queen Óleo Capilar",
     category: "cabelo",
