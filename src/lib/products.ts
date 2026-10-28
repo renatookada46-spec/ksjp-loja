@@ -361,6 +361,7 @@ export const products: Product[] = [
     name: "Honey Queen Escova de Couro Cabeludo",
     category: "cabelo",
     priceYen: 3300,
+    images: ["/produtos/refa-honey-queen/escova.webp"],
     price: fromYen(3300),
     size: "1 unidade",
     shape: "jar",
