@@ -177,6 +177,7 @@ export const products: Product[] = [
   },
   {
     slug: "shiseido-fino-mascara-capilar",
+    line: "fino-premium-touch",
     brand: "Fino",
     name: "Máscara Capilar Premium Touch",
     category: "cabelo",
@@ -206,6 +207,7 @@ export const products: Product[] = [
   },
   {
     slug: "shiseido-fino-hair-milk",
+    line: "fino-premium-touch",
     brand: "Fino",
     name: "Leite Capilar Premium Touch",
     category: "cabelo",
@@ -215,7 +217,7 @@ export const products: Product[] = [
     size: "140 ml",
     shape: "bottle",
     color: "#e9e9ea",
-    capColor: "#c8102e",
+    capColor: "#b8476f",
     tone: "#ece4d3",
     description:
       "O leave-in da mesma linha da máscara Fino Premium Touch. Um leite leve, sem enxágue, que protege os fios do calor do secador, controla o frizz e deixa o cabelo macio e com brilho o dia todo.",
@@ -230,6 +232,7 @@ export const products: Product[] = [
   },
   {
     slug: "shiseido-fino-hair-oil",
+    line: "fino-premium-touch",
     brand: "Fino",
     name: "Óleo Capilar Premium Touch",
     category: "cabelo",
@@ -238,7 +241,7 @@ export const products: Product[] = [
     size: "70 ml",
     shape: "bottle",
     color: "#e9e9ea",
-    capColor: "#c8102e",
+    capColor: "#b8476f",
     tone: "#ece4d3",
     description:
       "O óleo sem enxágue da linha Fino Premium Touch. Leve e de rápida absorção, sela as pontas, protege do calor do secador e deixa o cabelo com brilho e toque sedoso, sem pesar.",

@@ -465,6 +465,19 @@ h1, h2, h3 { font-family: var(--font-display), "Times New Roman", serif; font-we
 .lh-bottles .stage { border-radius: 18px; background: radial-gradient(120% 80% at 50% 100%, rgba(255,220,150,.35), rgba(255,255,255,.04) 70%); box-shadow: inset 0 0 0 1px rgba(227,196,131,.2); }
 .lh-photo { position: relative; aspect-ratio: 3/5; }
 .lh-photo img { object-fit: contain; filter: drop-shadow(0 24px 40px rgba(0,0,0,.5)); }
+/* Abertura rosa perolada (linha Fino) */
+.lh-rose { color: var(--ink); background: radial-gradient(90% 80% at 70% 55%, #fff 0%, #f7eef0 45%, #efe4e2 100%); }
+.lh-rose .lh-glow { background: radial-gradient(circle, rgba(242,169,191,.55), rgba(184,71,111,.12) 50%, transparent 72%); }
+.lh-rose .lh-copy .eyebrow { color: var(--beni); }
+.lh-rose .lh-copy p { color: var(--ink-soft); }
+.lh-rose .lh-bottles { grid-template-columns: repeat(3, 1fr); }
+.lh-rose .lh-bottles .stage { background: radial-gradient(120% 80% at 50% 100%, rgba(242,169,191,.35), rgba(255,255,255,.5) 70%); box-shadow: inset 0 0 0 1px rgba(184,71,111,.15); }
+.lh-rose .lh-photo img { filter: drop-shadow(0 24px 36px rgba(120,40,70,.25)); }
+.lh-silks { position: absolute; inset: 0; pointer-events: none; }
+.lh-silk { position: absolute; left: -10%; width: 120%; height: 22vh; border-radius: 50%; filter: blur(30px); opacity: .55; }
+.lh-silk:nth-child(1) { top: 18%; background: linear-gradient(90deg, transparent, rgba(242,169,191,.7), transparent); }
+.lh-silk:nth-child(2) { top: 48%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), rgba(242,169,191,.4), transparent); }
+.lh-silk:nth-child(3) { top: 70%; background: linear-gradient(90deg, transparent, rgba(184,71,111,.25), transparent); }
 .ln-lead { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
 .ln-lead h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.2; max-width: 22ch; }
 .ln-lead p { max-width: 40rem; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.8; }

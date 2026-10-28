@@ -31,6 +31,14 @@ export function LineHero({ line, products }: { line: Line; products: Product[] }
         gsap.utils.toArray<HTMLElement>(".lh-float").forEach((el, i) => {
           gsap.to(el, { y: -12, duration: 2.4 + i * 0.3, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.6 });
         });
+        // Faixas de seda rosa que ondulam devagar atrás dos frascos.
+        gsap.utils.toArray<HTMLElement>(".lh-silk").forEach((el, i) => {
+          gsap.fromTo(
+            el,
+            { xPercent: -8, rotation: -6 + i * 4 },
+            { xPercent: 8, rotation: 4 - i * 3, duration: 7 + i * 2, ease: "sine.inOut", yoyo: true, repeat: -1 },
+          );
+        });
       });
       return () => mm.revert();
     },
@@ -38,9 +46,16 @@ export function LineHero({ line, products }: { line: Line; products: Product[] }
   );
 
   return (
-    <section className="lh" ref={root} aria-label={`${line.brand} ${line.name}`}>
+    <section className={line.theme ? `lh lh-${line.theme}` : "lh"} ref={root} aria-label={`${line.brand} ${line.name}`}>
       {line.heroImage && <Image className="lh-bg" src={line.heroImage} alt="" fill priority sizes="100vw" />}
       <div className="lh-glow" aria-hidden="true" />
+      {line.theme === "rose" && (
+        <div className="lh-silks" aria-hidden="true">
+          <span className="lh-silk" />
+          <span className="lh-silk" />
+          <span className="lh-silk" />
+        </div>
+      )}
       <div className="wrap lh-in">
         <div className="lh-copy">
           <div className="eyebrow">{line.eyebrow}</div>

@@ -4,6 +4,7 @@ import { SakuraPetal } from "./SakuraPetal";
 
 const links = [
   { href: "/linhas/refa-honey-queen", label: "Honey Queen" },
+  { href: "/linhas/fino-premium-touch", label: "Fino" },
   { href: "/produtos?categoria=skincare", label: "Skincare" },
   { href: "/produtos?categoria=protetor-solar", label: "Protetor solar" },
   { href: "/produtos?categoria=cabelo", label: "Cabelo" },
