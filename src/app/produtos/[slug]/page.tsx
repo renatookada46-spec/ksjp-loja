@@ -74,6 +74,20 @@ export default async function ProductPage({ params }: Props) {
                 ou {site.installments}x de {brl(product.price / site.installments)} · {product.size}
               </span>
             </div>
+            {product.alert && (
+              <aside className="pdp-alert" role="alert">
+                <div className="pdp-alert-head">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3 2 21h20L12 3z" />
+                    <path d="M12 10v5M12 18h.01" />
+                  </svg>
+                  <b>{product.alert.title}</b>
+                </div>
+                {product.alert.text.map((t) => (
+                  <p key={t}>{t}</p>
+                ))}
+              </aside>
+            )}
             {product.highlights?.length ? (
               <ul className="pdp-highlights">
                 {product.highlights.map((h) => (

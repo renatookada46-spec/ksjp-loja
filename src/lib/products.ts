@@ -44,6 +44,7 @@ export type Product = {
   pairsWith?: string[]; // slugs de produtos que combinam
   priceYen?: number; // preço na loja japonesa, só para referência interna
   line?: string; // linha de produtos com página própria, ex.: "refa-honey-queen"
+  alert?: { title: string; text: string[] }; // aviso importante em destaque na página (ex.: voltagem)
 };
 
 export const categories: Category[] = [
@@ -476,6 +477,51 @@ export const products: Product[] = [
     howToUse: "Shampoo, treatment e, com o cabelo úmido ou seco, o óleo do meio às pontas.",
     highlights: ["Shampoo 500 ml", "Treatment 500 g", "Óleo capilar 130 ml"],
     curatorNote: "A rotina inteira de uma vez. É assim que ela mostra o que sabe fazer.",
+  },
+  {
+    slug: "refa-beautech-dryer-smart-w",
+    brand: "ReFa",
+    name: "Secador Beautech Dryer Smart W",
+    category: "cabelo",
+    priceYen: 30800,
+    images: [
+      "/produtos/refa-beautech-dryer/cores.webp",
+      "/produtos/refa-beautech-dryer/uso.webp",
+      "/produtos/refa-beautech-dryer/ion.webp",
+      "/produtos/refa-beautech-dryer/sensor.webp",
+      "/produtos/refa-beautech-dryer/frio.webp",
+      "/produtos/refa-beautech-dryer/presente.webp",
+    ],
+    price: fromYen(30800),
+    size: "1 unidade · branco, preto ou rosa",
+    shape: "bottle",
+    color: "#e9e9ea",
+    capColor: "#c9ccd2",
+    tone: "#e7e6eb",
+    badge: { label: "Somente 100V" },
+    description:
+      "O secador compacto da ReFa, queridinho dos salões do Japão. Seca rápido, controla o calor sozinho para proteger o couro cabeludo e as pontas, e deixa o cabelo com brilho de escova feita em salão. Vem em caixa de presente.",
+    howToUse:
+      "Ligue em tomada de 100V (no Brasil, só com transformador). Seque primeiro a raiz e depois o comprimento, com o bico apontado de cima para baixo. Termine com o botão de ar frio para fixar o brilho.",
+    tagline: "Seca rápido e deixa o cabelo com brilho de salão.",
+    highlights: ["Secagem rápida", "Controle automático do calor", "Botão de ar frio"],
+    forWho: ["Todos os tipos de cabelo", "Quem seca o cabelo todo dia"],
+    texture: "Compacto e leve, cabe na mala",
+    ingredients: [
+      { name: "Íons de hidratação", benefit: "Tecnologia própria da ReFa que leva umidade ao fio enquanto seca." },
+      { name: "Sensor de temperatura", benefit: "Alterna ar quente e frio sozinho para não ressecar o couro cabeludo e as pontas." },
+    ],
+    curatorNote: "Um dos presentes mais desejados do Japão. Lembre da voltagem: ele é feito para tomada de 100V.",
+    alert: {
+      title: "Atenção: funciona somente em 100V",
+      text: [
+        "Este secador é o modelo vendido no Japão e funciona somente em 100V. No Brasil as tomadas são de 127V ou 220V.",
+        "Ligado direto na tomada brasileira, ele pode esquentar demais e queimar. Em 220V queima na hora.",
+        "Para usar, é obrigatório um transformador (conversor de voltagem) de 100V com potência de pelo menos 1.500 W, comprado à parte.",
+        "Não trocamos nem devolvemos aparelho queimado por uso em voltagem errada ou sem transformador.",
+      ],
+    },
+    pairsWith: ["shiseido-fino-hair-oil", "refa-honey-queen-outbath"],
   },
 ];
 

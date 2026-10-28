@@ -18,6 +18,7 @@ function catalogText() {
         p.texture ? `  Textura: ${p.texture}` : "",
         p.ingredients?.length ? `  Ativos: ${p.ingredients.map((i) => `${i.name} (${i.benefit})`).join("; ")}` : "",
         p.curatorNote ? `  Nota da curadoria: ${p.curatorNote}` : "",
+        p.alert ? `  AVISO OBRIGATÓRIO (sempre diga isso ao falar deste produto): ${p.alert.title}. ${p.alert.text.join(" ")}` : "",
         `  Como usar: ${p.howToUse}`,
       ]
         .filter(Boolean)
