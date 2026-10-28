@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { HoneyHero } from "@/components/HoneyHero";
 import { LineHero } from "@/components/LineHero";
 import { ProductVisual } from "@/components/ProductVisual";
 import { PurchaseNotice } from "@/components/PurchaseNotice";
@@ -37,7 +38,7 @@ export default async function LinePage({ params }: Props) {
 
   return (
     <>
-      <LineHero line={line} products={products} />
+      {line.heroImage ? <HoneyHero line={line} /> : <LineHero line={line} products={products} />}
 
       <div className="paper">
         <section className="block wrap ln-lead">

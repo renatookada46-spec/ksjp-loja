@@ -11,10 +11,10 @@ const FEATURED = "refa-honey-queen";
 
 export function Hero() {
   const line = getLine(FEATURED);
-  const featured = (line?.products ?? [])
-    .slice(0, 3)
-    .map(getProduct)
-    .filter((p): p is Product => p !== undefined);
+  const all = (line?.products ?? []).map(getProduct).filter((p): p is Product => p !== undefined);
+  // Com foto real, mostra só os produtos que já têm foto.
+  const withPhoto = all.filter((p) => p.images?.length);
+  const featured = (withPhoto.length ? withPhoto : all).slice(0, 3);
 
   return (
     <section className="hero" aria-label="Abertura">

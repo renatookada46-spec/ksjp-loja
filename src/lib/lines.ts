@@ -26,6 +26,7 @@ export const lines: Line[] = [
     eyebrow: "ReFa Honey Queen",
     title: "Cabelo de mel, denso e hidratado.",
     subtitle: "Com geleia real da abelha rainha, a linha de cabelo mais desejada da ReFa no Japão.",
+    heroImage: "/linhas/refa-honey-queen/hero.webp",
     lead: {
       title: "Depois de um dia puxado, um ritual de recompensa.",
       text: "A geleia real é o alimento reservado só para a abelha rainha. Na Honey Queen, ela se junta ao mel e às ceramidas numa fórmula que parece um sérum, feita para reparar o cabelo danificado e devolver maciez e brilho.",

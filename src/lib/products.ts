@@ -267,6 +267,7 @@ export const products: Product[] = [
   // ReFa Honey Queen: produtos reais, preços da loja oficial no Japão convertidos para reais.
   {
     slug: "refa-honey-queen-shampoo",
+    images: ["/produtos/refa-honey-queen/shampoo.webp"],
     brand: "ReFa",
     name: "Honey Queen Shampoo",
     category: "cabelo",
@@ -297,6 +298,7 @@ export const products: Product[] = [
   },
   {
     slug: "refa-honey-queen-treatment",
+    images: ["/produtos/refa-honey-queen/treatment.webp"],
     brand: "ReFa",
     name: "Honey Queen Treatment",
     category: "cabelo",
@@ -377,6 +379,7 @@ export const products: Product[] = [
   },
   {
     slug: "refa-honey-queen-kit-duo",
+    images: ["/produtos/refa-honey-queen/duo.webp"],
     brand: "ReFa",
     name: "Kit Honey Queen Shampoo e Treatment",
     category: "kits",
